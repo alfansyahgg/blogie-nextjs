@@ -28,19 +28,23 @@ export default function Home() {
     fetchData();
   }, []);
 
+  const removeNews = (index) => {
+    setNews([...news.slice(0, index), ...news.slice(index + 1)]);
+  };
+
   return (
     <HomeLayout>
       <Container maxWidth="lg" sx={{ my: 4 }}>
         <Grid container spacing={2}>
           {loading
             ? _.range(1, 7).map((i, index) => (
-                <Box key={index} sx={{ width: 345, marginRight: 0.5, my: 5 }}>
+                <Grid xs={4} key={index}>
                   <CardSkeleton />
-                </Box>
+                </Grid>
               ))
             : _.map(news, (item, index) => (
                 <Grid xs={4} key={index}>
-                  <CardNews item={item} />
+                  <CardNews item={item} index={index} remove={removeNews} />
                 </Grid>
               ))}
         </Grid>
