@@ -1,1 +1,3 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+Next JS + MUI
+News API : https://the-lazy-media-api.vercel.app/api/
+Github : https://github.com/NicolaDeastra/The-Lazy-Media-api
